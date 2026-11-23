@@ -8,7 +8,8 @@ Three versions of the same tool forecast the **INTERBANK USD/PKR** rate for a pa
 
 > The **hedge part (NDF / forward premium) is not included yet.** First the three models are compared, then the best one is used for the hedge decision.
 
-![How the three models work](USDPKR_Models_Flowchart.png)
+![How the three models work]<img width="1890" height="1762" alt="USDPKR_Models_Flowchart" src="https://github.com/user-attachments/assets/2439bb4e-5314-4d07-a45f-07e4960f6942" />
+
 
 ---
 
@@ -125,7 +126,6 @@ The last **20 %** of the months (Nov-2022 to Jul-2024, 21 months) are never used
 
 - Only about 100 monthly observations, and the test period contains the 2022-23 devaluation shock.
 - CatBoost does not beat naive at 3 months. Its raw worst case tends to be too low (real rates exceeded it more often than the intended 5 %), so treat it as an optimistic worst case.
-- The Random Forest 95 % worst case can be wide, especially for long horizons, because a forest averages the outcomes in its leaves.
 - SVM factor forecasts are model estimates, and their errors pass into the Interbank forecast. Its worst case is a statistical estimate, not a guarantee.
 - Forecasts beyond about 12 months are unreliable. A very far payment month may be refused with a message asking for a nearer month or more data.
 - If the Excel file is open in Excel when the program saves, close it and run again.
@@ -133,6 +133,5 @@ The last **20 %** of the months (Nov-2022 to Jul-2024, 21 months) are never used
 
 ---
 
-## 8. Next step
 
 Compare the three models on the same horizons, pick the best one, and add the hedge module (NDF / forward premium) on top of it.
